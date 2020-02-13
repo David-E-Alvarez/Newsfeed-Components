@@ -105,9 +105,9 @@ const data = [
 
   []Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
-  []Step 3: return the entire component.
+  [x]Step 3: return the entire component.
 
-  []Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  [x]Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
   []Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
@@ -139,8 +139,10 @@ function createArticle(objParameter){
   firstParagraph.textContent = objParameter.firstParagraph;
   secondParagraph.textContent = objParameter.secondParagraph;
   thirdParagraph.textContent = objParameter.thirdParagraph;
+  buttonExpand.textContent = 'toggle';
   //event listener to expandButton
   buttonExpand.addEventListener("click", event =>{
+    article.classList.toggle('article-open');
     console.log("button event: " + event.target);
   })
 
@@ -153,6 +155,7 @@ const articles = document.querySelector('.articles');
 data.map(data=>{
   articles.appendChild(createArticle(data))
 })
+
 
 
 
