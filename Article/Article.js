@@ -146,7 +146,7 @@ function createArticle(objParameter){
     console.log("button event: " + event.target);
   })
 
-
+  //console.log("article: " + article);
   return article;
   
 }
@@ -154,11 +154,12 @@ function createArticle(objParameter){
 
 
 const articles = document.querySelector('.articles');
+console.log("articles: " + articles);
 
 data.push({
   title: 'Read this!',
   date: '2/12/20',
-  firstParagraph: 'alk;sjdf kajsdf asd aklsdjfss',
+  firstParagraph: 'a;lksdjfa;lksjdf;aklsj',
   secondParagraph: 'as;dkljfas kasd f asdkfasdf',
   thirdParagraph: 'kjasdflaksdfjlkj'
 });
