@@ -103,7 +103,7 @@ const data = [
 
   Your function should take either an [x]object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
-  []Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+  [x]Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   [x]Step 3: return the entire component.
 
@@ -139,7 +139,7 @@ function createArticle(objParameter){
   firstParagraph.textContent = objParameter.firstParagraph;
   secondParagraph.textContent = objParameter.secondParagraph;
   thirdParagraph.textContent = objParameter.thirdParagraph;
-  buttonExpand.textContent = 'toggle';
+  buttonExpand.textContent = 'click for article';
   //event listener to expandButton
   buttonExpand.addEventListener("click", event =>{
     article.classList.toggle('article-open');
