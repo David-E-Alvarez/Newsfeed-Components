@@ -118,25 +118,43 @@ function createArticle(objParameter){
   const article = document.createElement('div');
   const title = document.createElement('h2');
   const date = document.createElement('p');
-  const paragraph = document.createElement('p');
+  const firstParagraph = document.createElement('p');
+  const secondParagraph = document.createElement('p');
+  const thirdParagraph = document.createElement('p');
   const buttonExpand = document.createElement('span');
   //element structure
   article.appendChild(title);
   article.appendChild(date);
-  article.appendChild(paragraph);
-  article.appendChild(paragraph);
-  article.appendChild(paragraph);
+  article.appendChild(firstParagraph);
+  article.appendChild(secondParagraph);
+  article.appendChild(thirdParagraph);
   article.appendChild(buttonExpand);
   //element classes
   article.classList.add('article');
   date.classList.add('date');
   buttonExpand.classList.add('expandButton');
   //set text content
-  
+  title.textContent = objParameter.title;
+  date.textContent = objParameter.date;
+  firstParagraph.textContent = objParameter.firstParagraph;
+  secondParagraph.textContent = objParameter.secondParagraph;
+  thirdParagraph.textContent = objParameter.thirdParagraph;
+  //event listener to expandButton
+  buttonExpand.addEventListener("click", event =>{
+    console.log("button event: " + event.target);
+  })
 
-  
+
+  return article;
   
 }
+
+const articles = document.querySelector('.articles');
+data.map(data=>{
+  articles.appendChild(createArticle(data))
+})
+
+
 
 createArticle(data);
 //console.log("objParameter.length: " + objParameter.length);
