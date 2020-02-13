@@ -99,9 +99,9 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
-  Hint: You will need to use createElement more than once here!
+  [x]Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+  Your function should take either an [x]object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
   []Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
@@ -112,3 +112,39 @@ const data = [
   []Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+function createArticle(objParameter){
+  //elements
+  const article = document.createElement('div');
+  const title = document.createElement('h2');
+  const date = document.createElement('p');
+  const paragraph = document.createElement('p');
+  const buttonExpand = document.createElement('span');
+  //element structure
+  article.appendChild(title);
+  article.appendChild(date);
+  article.appendChild(paragraph);
+  article.appendChild(paragraph);
+  article.appendChild(paragraph);
+  article.appendChild(buttonExpand);
+  //element classes
+  article.classList.add('article');
+  date.classList.add('date');
+  buttonExpand.classList.add('expandButton');
+  //set text content
+  
+
+  
+  
+}
+
+createArticle(data);
+//console.log("objParameter.length: " + objParameter.length);
+//console.log("createArticle(objParameter): " + createArticle(data));
+// console.log("data: " + data);
+// console.log("data: " + data[0]);
+// console.log("data: " + data[0].title);
+// var myVar = objParameter[0].title;
+  // console.log("myVar: " + myVar);
+  //console.log("objParameter[0].title: " + objParameter[0].title)
+  //console.log("objParameter[0]: " + objParameter[0].title);
