@@ -109,7 +109,7 @@ const data = [
 
   [x]Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
-  []Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  [x]Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
 
@@ -151,15 +151,24 @@ function createArticle(objParameter){
   
 }
 
+
+
 const articles = document.querySelector('.articles');
+
+data.push({
+  title: 'Read this!',
+  date: '2/12/20',
+  firstParagraph: 'alk;sjdf kajsdf asd aklsdjfss',
+  secondParagraph: 'as;dkljfas kasd f asdkfasdf',
+  thirdParagraph: 'kjasdflaksdfjlkj'
+});
+
 data.map(data=>{
   articles.appendChild(createArticle(data))
 })
 
+//createArticle(data);
 
-
-
-createArticle(data);
 //console.log("objParameter.length: " + objParameter.length);
 //console.log("createArticle(objParameter): " + createArticle(data));
 // console.log("data: " + data);
@@ -169,3 +178,4 @@ createArticle(data);
   // console.log("myVar: " + myVar);
   //console.log("objParameter[0].title: " + objParameter[0].title)
   //console.log("objParameter[0]: " + objParameter[0].title);
+
