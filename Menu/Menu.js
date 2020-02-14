@@ -21,7 +21,7 @@ let menuItems = [
 
   [x]The function takes an array as its only argument.
 
-  []Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
+  [x]Step 2: Inside this function, iterate over the array creating a list item <li> element for each item in the array. 
   Add those items to the <ul>
 
   [x]Step 3: Using a DOM selector, select the menu button (the element with a class of 'menu-button') currently on the DOM.
@@ -33,60 +33,54 @@ let menuItems = [
   []Step 6: add the menu component to the DOM.
   
 */
-
-function createMenu(menuItemsParameter){
+const menuButton = document.querySelector('.menu-button');
+const header = document.querySelector('.header');
+function createMenu(menuItemsArr){
   //elements
   const menu = document.createElement('div');
   const ulElement = document.createElement('ul');
-  const li1Element = document.createElement('li');
-  const li2Element = document.createElement('li');
-  const li3Element = document.createElement('li');
-  const li4Element = document.createElement('li');
-  const li5Element = document.createElement('li');
-  const li6Element = document.createElement('li');
+  for(var i = 0; i < menuItemsArr.length; i++){
+    const li = document.createElement('li');
+    li.textContent = menuItemsArr[i];
+    ulElement.appendChild(li);
+  }
+
+  // const li1Element = document.createElement('li');
+  // const li2Element = document.createElement('li');
+  // const li3Element = document.createElement('li');
+  // const li4Element = document.createElement('li');
+  // const li5Element = document.createElement('li');
+  // const li6Element = document.createElement('li');
   //assign array values to elements
-  li1Element.textContent = menuItems[0];
-  li2Element.textContent = menuItems[1];
-  li3Element.textContent = menuItems[2];
-  li4Element.textContent = menuItems[3];
-  li5Element.textContent = menuItems[4];
-  li6Element.textContent = menuItems[5];
+  
+  // li2Element.textContent = menuItems[1];
+  // li3Element.textContent = menuItems[2];
+  // li4Element.textContent = menuItems[3];
+  // li5Element.textContent = menuItems[4];
+  // li6Element.textContent = menuItems[5];
   //element structure
   menu.appendChild(ulElement);
-  ulElement.appendChild(li1Element);
-  ulElement.appendChild(li2Element);
-  ulElement.appendChild(li3Element);
-  ulElement.appendChild(li4Element);
-  ulElement.appendChild(li5Element);
-  ulElement.appendChild(li6Element);
+  // ulElement.appendChild(li2Element);
+  // ulElement.appendChild(li3Element);
+  // ulElement.appendChild(li4Element);
+  // ulElement.appendChild(li5Element);
+  // ulElement.appendChild(li6Element);
   //element classes
   menu.classList.add('menu');
  //set text content
- var myVar = menuItems[0];
- console.log("myVar: " + myVar);
-
-
-  
-  //console.log("menuButton: " + menuButton);  
-  
+  menuButton.addEventListener('click', event => {
+    console.log("event: " + event);
+    menu.classList.toggle('menu--open');
+  })
   return menu;
 }
 
-const menuButton = document.querySelector('.menu-button');
-menuButton.appendChild(createMenu(menuItems))
-// menuItems.map(menuItems=>{
-  
-// })
 
 
 
-// data.map(data=>{
-  //   articles.appendChild(createArticle(data))
-  // })
+header.append(createMenu(menuItems));
 
 
 
 
-  //console.log("menu: " + menu);
-//console.log("menuItemsParameter: " + menuItemsParameter[0]);
 

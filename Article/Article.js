@@ -154,7 +154,7 @@ function createArticle(objParameter){
 
 
 const articles = document.querySelector('.articles');
-console.log("articles: " + articles);
+//console.log("articles: " + articles);
 
 data.push({
   title: 'Read this!',
